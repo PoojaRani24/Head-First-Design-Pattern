@@ -1,0 +1,42 @@
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public interface FlyBehaviour{
+	public void fly();
+}
+
+public class FlyWithWings implements FlyBehaviour{
+	public void fly(){
+		System.out.println("FLY");
+	}
+}
+
+public class FlyNoWay implements FlyBehaviour{
+	public void fly(){
+		System.out.println("No FLY");
+	}
+}
+
+public abstract class Duck{
+	FlyBehaviour flyObj;
+	public Duck(){};
+	public void performFly(){
+		flyObj.fly();
+	}
+}
+
+public class MallardDuck extends Duck{
+	public MallardDuck(){
+		flyobj = new FlyWithWings();
+	}
+}
+
+public class MiniDuckSimulator{
+	public static void main(String[] ars){
+		Duck mallard = new MallardDuck();
+		mallard.performFly();
+	}
+}
